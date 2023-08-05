@@ -53,10 +53,10 @@
   
     <div class="caption">
       <div class="caption-section">
-        <p>2022 PressOne Africa <span>&nbsp; All rights reserved</span></p>
+        <p>&copy; 2022 PressOne Africa <span>&nbsp; All rights reserved</span></p>
       </div>
-      <div  class="caption-section">
-        <p>Terms & Agreement<span>&nbsp; Privacy Policy</span></p>
+      <div  class="caption-section pointer">
+        <p >Terms & Agreement<span>&nbsp; Privacy Policy</span></p>
       </div>
     </div>
   </footer>

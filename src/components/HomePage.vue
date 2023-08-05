@@ -2,7 +2,7 @@
   <div class="main-container">
     <!-- Banner -->
 
-    <div class="banner">
+    <div class="banner" >
       <div class="banner-info">
         <h1 class="banner-title">
           You do the work,<br />
@@ -23,7 +23,7 @@
       </div>
     </div>
     <!-- Review -->
-    <section class="review-container">
+    <section class="review-container" id="aboutus">
       <div class="review-card" v-for="review in reviews" :key="review">
         <div class="avatar">
           <img src="../assets/user.svg" alt="" class="review-user-icon" />
@@ -36,7 +36,7 @@
       </div>
     </section>
     <!-- What you get -->
-    <section class="product-container">
+    <section class="product-container" id="product">
       <h1 class="product-header">What you get</h1>
       <div class="product">
         <div class="sales-card">
@@ -90,8 +90,8 @@
       </div>
     </section>
     <!-- Plan  -->
-    <section>
-      <h1 class="product-header">Choose a plan that works for you</h1>
+    <section >
+      <h1 class="product-header" id="pricing">Choose a plan that works for you</h1>
       <!-- <div v-if="isLoading" class="loading message">
         Please Wait while we fetch plans.....
       </div>
@@ -113,7 +113,7 @@
                   <td>Call Reception</td>
                 </tr>
                 <tr>
-                  <td class="last-data">Receive and make calls</td>
+                  <td>Receive and make calls</td>
                 </tr>
               </tbody>
             </table>
@@ -128,16 +128,16 @@
               <p class="plan-info">{{ plan.description }}</p>
               <button class="subscribe">{{ plan.cta }}</button>
             </div>
-            <table class="responsive-table" style="margin-top: 20px">
-              <tbody>
-                <tr>
-                  <td>{{ plan.call_reception }}</td>
+            <table class="responsive-table " style="margin-top: 20px" >
+              <tbody >
+                <tr> 
+                  <td :class="plan.name.toLowerCase() === 'all access' ? 'last-data' : ''"  > {{ plan.call_reception }}</td>
                 </tr>
-                <tr>
+                <tr :class="plan.name.toLowerCase() === 'all access' ? 'last-data' : ''" >
                   <td>{{ plan.calls_per_week }}</td>
                 </tr>
                 <tr>
-                  <td>{{ plan.agent }}</td>
+                  <td :class="plan.name.toLowerCase() === 'all access' ? 'last-data' : ''" >{{ plan.agent }}</td>
                 </tr>
               </tbody>
             </table>
@@ -171,7 +171,7 @@
       </div>
 
       <!-- support -->
-      <section class="support-section">
+      <section class="support-section" id="support">
         <div class="support-container">
           <p class="support-text">
             Join thousands of entrepreneurs using PressOne to improve their

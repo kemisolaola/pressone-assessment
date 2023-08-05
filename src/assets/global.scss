@@ -2,17 +2,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
 @font-face {
   font-family: 'Recoleta';
-  src: url('./fonts/recoleta.otf') format('otf');
+  src: url('./fonts/recoleta-font.otf');
 }
 // mobile screen
 @media (max-width: 768px) {
   .nav-items {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
     align-items: center;
     padding: 0 20px;
   
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: $primary-color  ;
+    transition: left 0.3s ease-in-out;
+    padding-top: 80px;
+    color: white !important;
+    z-index: 80;
+  }
+  
+  .sidebar.open {
+    left: 0;
+  }
+  .white-text {
+    color: #fff !important;
+  }
+  .mobile-icon {
+    cursor: pointer;
+    display: flex;
+    justify-content: end;
   }
   .nav-links {
     display: none;
@@ -36,7 +60,7 @@
   }
   .banner-subtitle{
   font-size: 25px;
-  color: #212121;
+  color: #35383F;
   font-weight: 700;
   }
   .banner-img img {
@@ -96,6 +120,9 @@
 }
 // medium screen
 @media (min-width: 769px) and (max-width: 999px) {
+  .sidebar {
+    display: none;
+  }
   .nav-items {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -133,7 +160,7 @@
   }
   .banner-subtitle{
   font-size: 28px;
-  color: #212121;
+  color: #35383F;;
   font-weight: 700;
   }
   .review-container {
@@ -202,6 +229,9 @@
     padding: 0 120px;
   
   }
+  .sidebar {
+    display: none;
+  }
   .nav-links {
     display: flex;
     justify-content: center;
@@ -211,6 +241,9 @@
   .get-pressone {
     display: flex;
     justify-content: end;
+  }
+  .mobile-icon {
+    display: none;
   }
   .main-container {
     margin-top: 120px;
@@ -229,13 +262,16 @@
 .banner-title{
   font-size: 48px;
   color: #212121;
+  margin-bottom: 12px;
   }
   .banner-subtitle{
-  font-size: 32px;
-  color: #212121;
+  font-size: 30px;
+  color: #35383F;
   font-weight: 700;
+  margin-top: 12px;
   }
   .review-container {
+    margin-top: 100px;
     padding: 120px 120px 80px;
       grid-template-columns: repeat(4, 1fr);
   
@@ -293,7 +329,6 @@
   left: 0;
   width: 100%;
   background-color: #fff;
-  color: #fff;
   text-align: center;
   padding: 20px 0;
   font-family: 'Urbanist';
@@ -337,7 +372,7 @@
 }
 .banner-info {
     font-family: 'Recoleta';
-    margin-top: 50px;
+    margin-top: 30px;
 }
 .enquiry {
   color: $primary-color;
@@ -396,9 +431,10 @@
 .review-text {
     margin-top: 40px;
     color: #474B50;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 15px;
     text-align: center;
+    font-family: 'Urbanist';
 }
 .product-header {
 font-family: 'Recoleta';
